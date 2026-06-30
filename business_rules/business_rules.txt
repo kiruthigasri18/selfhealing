@@ -1,0 +1,79 @@
+Rule ID: PROD_001
+
+Product Volume shall be calculated as Product Length multiplied by Product Width multiplied by Product Height.
+
+Rule ID: PROD_002
+
+Product Weight must be greater than zero.
+
+Rule ID: PROD_003
+
+Product Density shall be calculated as Product Weight divided by Product Volume.
+
+Rule ID: PROD_004
+
+Product Dimensions (Length, Width, Height) must be greater than zero.
+
+Rule ID: ORD_001
+
+Delivery Duration shall be calculated as Customer Delivery Date minus Purchase Date.
+
+Rule ID: ORD_002
+
+Approval Duration shall be calculated as Approval Date minus Purchase Date.
+
+Rule ID: ORD_003
+
+Delivery Delay shall be calculated as Customer Delivery Date minus Estimated Delivery Date.
+
+Rule ID: ORD_004
+
+Delivery Status shall be classified as ON_TIME when Delivery Delay is less than or equal to zero, otherwise DELAYED.
+
+Rule ID: PAY_001
+
+Total Revenue shall be calculated using SUM(payment_value).
+
+Rule ID: PAY_002
+
+Average Installments shall be calculated using AVG(payment_installments).
+
+Rule ID: PAY_003
+
+Payment Count shall be calculated using COUNT(payment_sequential).
+
+Rule ID: REV_001
+
+Review Scores must be between 1 and 5.
+
+Rule ID: REV_002
+
+Review Category shall be classified as POSITIVE when Review Score is greater than or equal to 4.
+
+Rule ID: REV_003
+
+Review Category shall be classified as NEUTRAL when Review Score equals 3.
+
+Rule ID: REV_004
+
+Review Category shall be classified as NEGATIVE when Review Score is less than or equal to 2.
+
+Rule ID: CUST_001
+
+Customer State must not be null.
+
+Rule ID: CUST_002
+
+Customer Zip Code Prefix must be valid and non-null.
+
+Rule ID: ITEM_001
+
+Total Item Value shall be calculated using SUM(price).
+
+Rule ID: ITEM_002
+
+Average Freight Value shall be calculated using AVG(freight_value).
+
+Rule ID: ITEM_003
+
+Freight Value must be greater than zero.
