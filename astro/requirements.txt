@@ -1,0 +1,7 @@
+pandas
+numpy
+supabase
+google-genai
+pinecone
+python-dotenv
+python-dateutil
