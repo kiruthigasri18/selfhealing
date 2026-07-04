@@ -44,10 +44,13 @@ def orders_transform(orders_df):
         - orders_df["order_estimated_delivery_date"]
     ).dt.days
 
-    orders_df["delivery_status"] = np.where(
-        orders_df["delivery_delay_days"] <= 0,
-        "ON_TIME",
-        "DELAYED"
+    orders_df["delivery_status"] = np.select(
+        [
+            orders_df["order_delivered_customer_date"].isna(),
+            orders_df["delivery_delay_days"] <= 0
+        ],
+        ["PENDING", "ON_TIME"],
+        default="DELAYED"
     )
 
     return orders_df
