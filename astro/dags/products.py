@@ -9,9 +9,8 @@ def products_transform(products_df):
     )
 
     products_df["density"] = np.where(
-        products_df["volume_cm3"] > 0,
-        products_df["product_weight_g"] /
-        products_df["volume_cm3"],
+        (products_df["volume_cm3"] > 0) & (products_df["product_weight_g"] > 0),
+        products_df["product_weight_g"] / products_df["volume_cm3"],
         np.nan
     )
 
