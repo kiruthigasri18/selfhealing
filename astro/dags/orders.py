@@ -45,9 +45,13 @@ def orders_transform(orders_df):
     ).dt.days
 
     orders_df["delivery_status"] = np.where(
-        orders_df["delivery_delay_days"] <= 0,
-        "ON_TIME",
-        "DELAYED"
+        orders_df["delivery_delay_days"].isna(),
+        np.nan,
+        np.where(
+            orders_df["delivery_delay_days"] <= 0,
+            "ON_TIME",
+            "DELAYED"
+        )
     )
 
     return orders_df
