@@ -42,7 +42,7 @@ def orders_transform(orders_df):
     orders_df["delivery_delay_days"] = (
         orders_df["order_delivered_customer_date"]
         - orders_df["order_estimated_delivery_date"]
-    ).dt.days
+    ).dt.total_seconds() / 86400
 
     orders_df["delivery_status"] = np.where(
         orders_df["delivery_delay_days"] <= 0,
